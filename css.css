@@ -1,0 +1,144 @@
+body {
+    background-image: url(images/circuit3.gif);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+    /* height: 90vh; */
+    background-attachment: fixed;
+}
+/* 
+.navbar a {
+    color: #5cb85c !important;
+}
+
+.navbar a:hover {
+    color: white !important;
+} */
+
+.scrolled {
+    background: rgba(12, 23, 29, 0.95); 
+    /* color: white; */
+    /* transition: 0.3s; */
+}
+
+.scrolled a {
+    color: white;
+}
+
+.scrolled a:hover {
+    /* color: rgba(88, 151, 185, 0.95); */
+    color: #5cb85c;
+}
+
+
+@media screen and (max-width: 768px) {
+    #photo {
+        display: none;
+    }
+}
+
+.design {
+    margin-top: 5em;
+    height: 80vh !important;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#about {
+    margin-top: 5em;
+    height: 60vh !important;
+    background-color: rgba(32, 47, 56, 0.8);
+}
+
+#experience {
+    margin-top: 5em;
+    height: 100% !important;
+    background-color: rgba(32, 47, 56, 0.8);
+}
+
+#portfolio {
+    margin-top: 5em;
+    height: 100% !important;
+    background-color: rgba(32, 47, 56, 0.8);
+}
+
+/* Show the text for the pic ThemeJeux when hovering */
+.divHover:hover .imageHover {
+    opacity: 0.3;
+}
+.divHover:hover .textHover {
+    opacity: 1;
+}
+.textHover {
+    transition: .4s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+#contact {
+    margin-top: 5em;
+    height: 80vh !important;
+}
+.contactImg {
+    position: absolute;
+    opacity: 0.8;
+    background-image: url(images/email2.jpg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.concactForm {
+    opacity: 1;
+}
+
+
+
+  /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+     private $createdAt;
+
+     /**
+      * @ORM\Column(type="datetime")
+      * @var \DateTime
+      */
+     private $updatedAt;
+ 
+
+     public function setImageFile(File $image = null)
+     {
+         $this->imageFile = $image;
+ 
+         // VERY IMPORTANT:
+         // It is required that at least one field changes if you are using Doctrine,
+         // otherwise the event listeners won't be called and the file is lost
+         if ($image) {
+             // if 'updatedAt' is not defined in your entity, use another property
+             $this->updatedAt = new \DateTime('now');
+         }
+     }
+ 
+     public function getImageFile(): ?File
+     {
+         return $this->imageFile;
+     }
+ 
+ /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+     private $createdAt;
+
+     /**
+      * @ORM\Column(type="datetime")
+      * @var \DateTime
+      */
+     private $updatedAt;
